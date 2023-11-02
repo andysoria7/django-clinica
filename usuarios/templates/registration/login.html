@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+    <style>
+        .centrado {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="centrado">
+        <div class="col-md text-center">
+            <h2 class="mt-5">Acceso</h2>
+            <hr>
+            <form method="post" class="form-group">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="form-group mb-5">
+                    <button type="submit" class="btn btn-dark w-100">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
